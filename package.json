@@ -1,0 +1,22 @@
+{
+  "name": "hardcoretodolist",
+  "version": "1.0.0",
+  "description": "Complete To Do List with all components",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/williancapitolio/hardcoretodolist.git"
+  },
+  "author": "Willian Pereira da Silva",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/williancapitolio/hardcoretodolist/issues"
+  },
+  "homepage": "https://github.com/williancapitolio/hardcoretodolist#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
