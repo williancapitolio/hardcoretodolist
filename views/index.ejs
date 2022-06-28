@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,8 +9,24 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
+
 <body>
-    <h1>Hello World</h1>
-    
+    <header></header>
+    <main>
+        <section></section>
+    </main>
+    <form action="/create" method="post">
+        <input type="text" name="task" id="task" placeholder="Insira uma tarefa">
+        <button type="submit" id="addButton">Adicionar</button>
+    </form>
+    <ul>
+        <% tasksList.forEach((task)=> { %>
+            <li>
+                <%= task.task %> | <%= task.date.toLocaleDateString('pt-br') %>
+            </li>
+            <% }) %>
+    </ul>
+    <footer></footer>
 </body>
+
 </html>
