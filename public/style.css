@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css");
+
+:root {
+    --colorBg: #242424;
+
+    --colorBgTwo: #202024;
+
+    --colorDark: #100F10;
+
+    --colorGrey: #5A5A5A;
+
+    --colorMenu: #345EA8;
+
+    --colorOk: #0000EE;
+
+    --colorAdd: #004E14;
+
+    --colorDel: #F44336;
+
+    --colorUpdate: #FFA500;
+
+    --colorFont: #FFF;
+
+    --colorFontSecondary: #666666;
+
+    --colorFontTertiary: #CCC;
+
+    --fontDefault: 'Poppins', Verdana, Arial;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--fontDefault);
+}
+
+body {
+    background-color: var(--colorBg);
+    color: var(--colorFont);
+    width: 100%;
+    height: 100%;
+}
+
+.menuTasks {
+    background-color: var(--colorMenu);
+    padding: 2rem;
+    text-align: center;
+}
+
+.menuTasks h2 {
+    padding: 0 0 1rem 0;
+}
+
+.menuTasks input {
+    border: none;
+    border-radius: 0;
+    width: 45%;
+    padding: .6rem;
+    font-size: 1rem;
+    outline: none;
+    background-color: var(--colorBg);
+    color: var(--colorFont);
+    margin: 0;
+}
+
+.menuTasks .addButton,
+.menuTasks .updateButton {
+    border: none;
+    border-radius: 0;
+    width: 30%;
+    padding: .6rem;
+    font-size: 1rem;
+    outline: none;
+    background-color: var(--colorBg);
+    color: var(--colorFontSecondary);
+    cursor: pointer;
+    text-align: center;
+    transition: all .3s ease-in-out;
+}
+
+.menuTasks .addButton:hover {
+    background-color: var(--colorAdd);
+    color: var(--colorFont);
+}
+
+.menuTasks .updateButton:hover {
+    background-color: var(--colorUpdate);
+    color: var(--colorFont);
+}
+
+.listTasks {
+    padding: 1rem;
+}
+
+.listTasks ul {
+    list-style: none;
+}
+
+.listTasks ul li {
+    position: relative;
+    padding: .5rem;
+    background-color: var(--colorBg);
+    text-decoration: none;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 1.25rem;
+}
+
+.listTasks ul li div {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.listTasks ul li a {
+    text-decoration: none;
+    color: var(--colorFont);
+    font-size: 1.25rem;
+}
+
+.listTasks ul li div .updateIcon {
+    margin: 0 .25rem 0 0;
+    padding: .5rem;
+    text-decoration: none;
+    color: var(--colorFontTertiary);
+    transition: all .3s ease-in-out;
+}
+
+.listTasks ul li div .updateIcon:hover {
+    background: var(--colorUpdate);
+    border-radius: 75%;
+    color: var(--colorFont);
+}
+
+.listTasks ul li div .deleteIcon {
+    margin: 0 0 0 .25rem;
+    padding: .5rem;
+    text-decoration: none;
+    color: var(--colorFontTertiary);
+    transition: all .3s ease-in-out;
+}
+
+.listTasks ul li div .deleteIcon:hover {
+    background: var(--colorDel);
+    border-radius: 75%;
+    color: var(--colorFont);
+}
+
+.listTasks ul li span {
+    text-decoration: none;
+    color: var(--colorFontTertiary);
+    font-size: .75rem;
+    font-style: italic;
+    padding: 0 0 0 1rem;
+}
+
+.listTasks ul li:nth-child(odd) {
+    background-color: var(--colorDark);
+}
+
+.listTasks ul li:hover {
+    background-color: var(--colorGrey);
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #00000080;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: auto;
+}
+
+.modal .modalCard {
+    width: 25rem;
+    position: relative;
+    background-color: var(--colorBgTwo);
+}
+
+.modal .modalCard .modalCardHead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal .modalCard .modalCardHead .modalCardHeadClose {
+    color: var(--colorFont);
+    font-size: 1.25rem;
+    text-decoration: none;
+    margin: 0 .75rem 0 0;
+    padding: 0 .25rem 0 .25rem;
+    transition: all .3s ease-in-out;
+}
+
+.modal .modalCard .modalCardHead .modalCardHeadClose:hover {
+    background: var(--colorDel);
+    border-radius: 75%;
+}
+
+
+.modal .modalCard .modalCardHead h3 {
+    padding: 1rem;
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.modal .modalCard hr {
+    width: 92%;
+    margin: 0 auto;
+    background-color: var(--colorFontTertiary);
+}
+
+.modal .modalCard .modalCardContent p {
+    padding: 1rem 3rem;
+    text-align: center;
+    line-height: 2rem;
+}
+
+.modal .modalCard .modalCardFooter {
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal .modalCard .modalCardFooter {
+    padding: 1rem;
+}
+
+.modal .modalCard .modalCardFooter .btnYes,
+.modal .modalCard .modalCardFooter .btnNo {
+    text-decoration: none;
+    padding: .25rem;
+    width: 7rem;
+    text-align: center;
+}
+
+.modal .modalCard .modalCardFooter .btnYes {
+    color: var(--colorOk);
+    border: .0625rem solid var(--colorOk);
+    margin: 0 .75rem 0 0;
+    transition: all .3s ease-in-out;
+}
+
+.modal .modalCard .modalCardFooter .btnYes:hover {
+    color: var(--colorFont);
+    background-color: var(--colorOk);
+}
+
+.modal .modalCard .modalCardFooter .btnNo {
+    color: var(--colorDel);
+    border: .0625rem solid var(--colorDel);
+    margin: 0 0 0 .75rem;
+    transition: all .3s ease-in-out;
+}
+
+.modal .modalCard .modalCardFooter .btnNo:hover {
+    color: var(--colorFont);
+    background-color: var(--colorDel);
+}
+
+
+/*
+.header {
+    background-color: #345EA8;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4rem;
+}
+
+.header .navbar {
+    margin: 1rem;
+}
+
+.header .navbar .navbarContent {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.header .navbar .navbarContent .navbarContentBrand {
+    text-decoration: none;
+    color: #EEDBCB;
+    padding-right: 2rem;
+    justify-content: start;
+}
+
+.header .navbar .navbarContent .navbarContentSearch {
+    padding-left: 2rem;
+    justify-content: end;
+}
+*/
