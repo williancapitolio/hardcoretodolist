@@ -58,7 +58,7 @@ body {
     align-items: center;
     justify-content: space-between;
     font-weight: 600;
-    width: auto;
+    width: 325px;
     display: flex;
 }
 
@@ -68,6 +68,14 @@ body {
 
 .message-danger {
     background-color: var(--colorDelShadow);
+}
+
+.message-update {
+    background-color: var(--colorUpdateShadow);
+}
+
+.message-ok {
+    background-color: var(--colorOkShadow);
 }
 
 .message .messageText {
@@ -206,12 +214,12 @@ body {
     background-color: var(--colorGrey);
 }
 
-.listTasks ul li.checkTrue {
+.listTasks ul li.check-true {
     background-color: #888;
     text-decoration: line-through;
 }
 
-.listTasks ul li a.checkTrue::before {
+.listTasks ul li a.check-true::before {
     content: "";
     position: absolute;
     border: var(--colorFont) solid;
@@ -223,7 +231,7 @@ body {
     transform: rotate(45deg);
 }
 
-.listTasks ul li a.checkFalse::before {
+.listTasks ul li a.check-false::before {
     content: "";
     position: absolute;
     border: var(--colorFont) solid;

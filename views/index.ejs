@@ -54,9 +54,9 @@
                 <section class="listTasks" id="listTasks">
                     <ul>
                         <% tasksList.forEach((task)=> { %>
-                            <li class="checkFalse">
+                            <li class="check-<%= task.check %>">
                                 <div>
-                                    <a class="checkFalse" href="/">
+                                    <a class="check-<%= task.check %>" href="/check/<%= task._id %> ">
                                         <%= task.task %>
                                     </a>
                                     <span>
