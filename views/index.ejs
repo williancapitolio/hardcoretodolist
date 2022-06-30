@@ -30,13 +30,13 @@
             <% if (task==null) { %>
                 <h2>Hardcore To Do List - Adicionar</h2>
                 <form action="/create" method="post">
-                    <input type="text" name="task" id="task" placeholder="Insira uma tarefa" required>
+                    <input type="text" name="task" id="task" placeholder="Insira uma tarefa" autocomplete="off" required>
                     <button type="submit" class="addButton" id="addButton">Adicionar</button>
                 </form>
                 <% } else { %>
                     <h2>Hardcore To Do List - Editar</h2>
                     <form action="/updateOne/<%= task._id %>" method="post">
-                        <input type="text" name="task" id="task" value="<%= task.task %>" required>
+                        <input type="text" name="task" id="task" value="<%= task.task %>" autocomplete="off" required>
                         <button type="submit" class="updateButton" id="updateButton">Atualizar</button>
                     </form>
                     <% } %>
