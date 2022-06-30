@@ -5,6 +5,9 @@ let type = "";
 
 const getAllTasks = async (req, res) => {
     try {
+        setTimeout(() => {
+            message = "";
+        }, 1000);
         const tasksList = await Task.find();
         return res.render("index", {
             tasksList,
