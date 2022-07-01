@@ -2,102 +2,34 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hardcore To Do List</title>
-    <link rel="stylesheet" href="/style.css">
-    <script src="script.js" defer></script>
+    <%- include('./includes/head') %>
 </head>
 
 <body>
     <!--
-    <header class="header" id="header">
-        <div class="navbar">
-            <div class="navbarContent">
-                <div class="navbarContent">
-                    <a  class="navbarContentBrand" href="#">Hardcore To Do List</a>
-                    <form class="navbarContentSearch" action="">
-                        <input type="search" id="search" placeholder="Pesquisar tarefa">
-                    </form>
-                </div>
-            </div>
-        </div>
-    </header>
+    header
     -->
     <main>
         <% if (message !="" ) { %>
-            <section id="message" class="message message-<%= type %>">
-                <p class="messageText">
-                    <%= message %>
-                </p>
-                <span class="messageClose" id="messageClose"><i class="bi bi-x-lg"></i></span>
-            </section>
-            <% } %>
-                <section class="menuTasks">
-                    <% if (task==null) { %>
-                        <h2>Hardcore To Do List - Adicionar</h2>
-                        <form action="/create" method="post">
-                            <input type="text" name="task" id="task" placeholder="Insira uma tarefa" autocomplete="off"
-                                required>
-                            <button type="submit" class="addButton" id="addButton">Adicionar</button>
-                        </form>
-                        <% } else { %>
-                            <h2>Hardcore To Do List - Editar</h2>
-                            <form action="/updateOne/<%= task._id %>" method="post">
-                                <input type="text" name="task" id="task" value="<%= task.task %>" autocomplete="off"
-                                    required>
-                                <button type="submit" class="updateButton" id="updateButton">Atualizar</button>
-                            </form>
-                            <% } %>
-                </section>
-                <section class="listTasks" id="listTasks">
-                    <ul>
-                        <% tasksList.forEach((task)=> { %>
-                            <li class="check-<%= task.check %>">
-                                <div>
-                                    <a class="check-<%= task.check %>" href="/check/<%= task._id %> ">
-                                        <%= task.task %>
-                                    </a>
-                                    <span>
-                                        Criado em: <%= task.date.toLocaleDateString('pt-br') %>
-                                    </span>
-                                </div>
-                                <div>
-                                    <a class="updateIcon" href="/getById/<%= task._id %>/update"><i
-                                            class="bi bi-pencil-square"></i></a>
-                                    <a class="deleteIcon" href="/getById/<%= task._id %>/delete"><i
-                                            class="bi bi-trash"></i></a>
-                                </div>
-
-                            </li>
-                            <% }) %>
-                    </ul>
-                </section>
-                <% if (taskDelete !=null) {%>
-                    <section class="modal" id="modal">
-                        <div class="modalCard">
-                            <div class="modalCardHead">
-                                <h3>Confirmação</h3>
-                                <a class="modalCardHeadClose" href="/"><i class="bi bi-x-lg"></i></a>
-                            </div>
-
-                            <hr>
-                            <div class="modalCardContent">
-                                <p>Realmente deseja apagar a tarefa: <%= taskDelete.task %>?</p>
-                            </div>
-                            <div class="modalCardFooter">
-                                <a class="btnYes" href="/deleteOne/<%= taskDelete._id %>">Sim</a>
-                                <a class="btnNo" href="/">Não</a>
-                            </div>
-                        </div>
+            <%- include('./components/messageAlert') %>
+                <% } %>
+                    <section class="menuTasks">
+                        <% if (task==null) { %>
+                            <%- include('./components/formMenu', {titleForm: "Adicionar Tarefa" , action: "create" ,
+                                value: "" , idBtn: "addButton" , nameBtn: "Adicionar" }) %>
+                                <% } else { %>
+                                    <%- include('./components/formMenu', {titleForm: "Editar Tarefa" , action:
+                                        `updateOne/${task._id}`, value: task.task, idBtn: "updateButton" ,
+                                        nameBtn: "Atualizar" }) %>
+                                        <% } %>
                     </section>
-                    <% } %>
+                    <%- include('./components/listTask') %>
+                        <% if (taskDelete !=null) {%>
+                            <%- include('./components/modalDel', {task: taskDelete}) %>
+                                <% } %>
     </main>
     <!--
-    <footer class="footer" id="footer">
-        <p>Copyright &copy; 2022 <strong>williancapitolio</strong></p>
-    </footer>
+    footer
     -->
 </body>
 

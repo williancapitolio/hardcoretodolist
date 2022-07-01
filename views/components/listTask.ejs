@@ -1,0 +1,21 @@
+<section class="listTasks" id="listTasks">
+    <ul>
+        <% tasksList.forEach((task)=> { %>
+            <li class="check-<%= task.check %>">
+                <div>
+                    <a class="check-<%= task.check %>" href="/check/<%= task._id %> ">
+                        <%= task.task %>
+                    </a>
+                    <span>
+                        Criado em: <%= task.date.toLocaleDateString('pt-br') %>
+                    </span>
+                </div>
+                <div>
+                    <a class="updateIcon" href="/getById/<%= task._id %>/update"><i class="bi bi-pencil-square"></i></a>
+                    <a class="deleteIcon" href="/getById/<%= task._id %>/delete"><i class="bi bi-trash"></i></a>
+                </div>
+
+            </li>
+            <% }) %>
+    </ul>
+</section>
