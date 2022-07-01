@@ -47,9 +47,51 @@ body {
     height: 100%;
 }
 
+main {
+    margin: 4.5rem 0 3.625rem 0;
+}
+
+.header {
+    background-color: var(--colorGrey);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4.5rem;
+    width: 100%;
+}
+
+.header .navbar {
+    padding: 1.157em;
+}
+
+.header .navbar .navbarContent {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.header .navbar .navbarContent .navbarContentBrand {
+    text-decoration: none;
+    color: var(--colorFont);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.header .navbar .navbarContent .navbarContentSearch {
+    border: none;
+    border-radius: 0;
+    font-size: 1rem;
+    padding: .3rem .6rem;
+    outline: none;
+    background-color: var(--colorBg);
+    color: var(--colorFont);
+    margin: 0;
+}
+
 .message {
     padding: 1rem;
-    margin: 0 1rem 1rem 0;
+    margin: 0 1rem 4.625rem 0;
     position: fixed;
     bottom: 0;
     right: 0;
@@ -92,8 +134,9 @@ body {
 
 .menuTasks {
     background-color: var(--colorMenu);
-    padding: 2rem;
+    padding: 1.25rem;
     text-align: center;
+    border-top: 1px solid var(--colorBg);
 }
 
 .menuTasks h2 {
@@ -147,7 +190,7 @@ body {
 
 .listTasks ul li {
     position: relative;
-    padding: .5rem;
+    padding: .25rem;
     background-color: var(--colorBg);
     text-decoration: none;
     align-items: center;
@@ -223,8 +266,8 @@ body {
     content: "";
     position: absolute;
     border: var(--colorFont) solid;
-    top: 20px;
-    left: 16px;
+    top: 16px;
+    left: 19px;
     height: 15px;
     width: 7px;
     border-width: 0 2px 2px 0;
@@ -235,7 +278,7 @@ body {
     content: "";
     position: absolute;
     border: var(--colorFont) solid;
-    top: 23px;
+    top: 18px;
     left: 16px;
     height: 13px;
     width: 13px;
@@ -344,36 +387,12 @@ body {
     background-color: var(--colorDel);
 }
 
-
-/*
-.header {
-    background-color: #345EA8;
+.footer {
     position: fixed;
-    top: 0;
-    left: 0;
+    bottom: 0;
     width: 100%;
-    height: 4rem;
+    padding: 1rem;
+    text-align: center;
+    justify-content: center;
+    border-top: 1px solid var(--colorFontTertiary);
 }
-
-.header .navbar {
-    margin: 1rem;
-}
-
-.header .navbar .navbarContent {
-    display: flex;
-    flex-direction: row;
-
-}
-
-.header .navbar .navbarContent .navbarContentBrand {
-    text-decoration: none;
-    color: #EEDBCB;
-    padding-right: 2rem;
-    justify-content: start;
-}
-
-.header .navbar .navbarContent .navbarContentSearch {
-    padding-left: 2rem;
-    justify-content: end;
-}
-*/

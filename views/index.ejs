@@ -6,9 +6,7 @@
 </head>
 
 <body>
-    <!--
-    header
-    -->
+    <%- include('./includes/header') %>
     <main>
         <% if (message !="" ) { %>
             <%- include('./components/messageAlert') %>
@@ -28,9 +26,7 @@
                             <%- include('./components/modalDel', {task: taskDelete}) %>
                                 <% } %>
     </main>
-    <!--
-    footer
-    -->
+    <%- include('./includes/footer') %>
 </body>
 
 </html>
