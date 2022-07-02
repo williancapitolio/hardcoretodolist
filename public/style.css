@@ -58,6 +58,7 @@ main {
     left: 0;
     height: 4.5rem;
     width: 100%;
+    z-index: 999;
 }
 
 .header .navbar {
@@ -136,7 +137,7 @@ main {
     background-color: var(--colorMenu);
     padding: 1.25rem;
     text-align: center;
-    border-top: 1px solid var(--colorBg);
+    border-top: 1px solid var(--colorFontTertiary);
 }
 
 .menuTasks h2 {
@@ -397,6 +398,17 @@ main {
     justify-content: center;
     border-top: 1px solid var(--colorFontTertiary);
 }
+
+.footer a {
+    text-decoration: none;
+    font-weight: 500;
+    color: var(--colorFont);
+}
+
+.footer a:hover {
+    color: var(--colorFontTertiary);
+}
+
 
 .hidden {
     display: none !important;
