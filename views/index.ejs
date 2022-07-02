@@ -7,26 +7,27 @@
 
 <body>
     <%- include('./includes/header') %>
-    <main>
-        <% if (message !="" ) { %>
-            <%- include('./components/messageAlert') %>
-                <% } %>
-                    <section class="menuTasks">
-                        <% if (task==null) { %>
-                            <%- include('./components/formMenu', {titleForm: "Adicionar Tarefa" , action: "create" ,
-                                value: "" , idBtn: "addButton" , nameBtn: "Adicionar" }) %>
-                                <% } else { %>
-                                    <%- include('./components/formMenu', {titleForm: "Editar Tarefa" , action:
-                                        `updateOne/${task._id}`, value: task.task, idBtn: "updateButton" ,
-                                        nameBtn: "Atualizar" }) %>
-                                        <% } %>
-                    </section>
-                    <%- include('./components/listTask') %>
-                        <% if (taskDelete !=null) {%>
-                            <%- include('./components/modalDel', {task: taskDelete}) %>
-                                <% } %>
-    </main>
-    <%- include('./includes/footer') %>
+        <main>
+            <% if (message !="" ) { %>
+                <%- include('./components/messageAlert') %>
+                    <% } %>
+                        <section class="menuTasks">
+                            <% if (task==null) { %>
+                                <%- include('./components/formMenu', {titleForm: "Adicionar Tarefa" , action: "create" ,
+                                    value: "" , idBtn: "addButton" , nameBtn: "Adicionar" }) %>
+                                    <% } else { %>
+                                        <%- include('./components/formMenu', {titleForm: "Editar Tarefa" , action:
+                                            `updateOne/${task._id}`, value: task.task, idBtn: "updateButton" ,
+                                            nameBtn: "Atualizar" }) %>
+                                            <% } %>
+                        </section>
+                        <%- include('./components/listTask') %>
+                            <% if (taskDelete !=null) {%>
+                                <%- include('./components/modalDel', {task: taskDelete}) %>
+                                    <% } %>
+                                        <%- include('./components/pagination') %>
+        </main>
+        <%- include('./includes/footer') %>
 </body>
 
 </html>

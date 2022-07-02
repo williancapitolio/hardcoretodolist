@@ -52,7 +52,7 @@ main {
 }
 
 .header {
-    background-color: var(--colorGrey);
+    background-color: var(--colorMenu);
     position: fixed;
     top: 0;
     left: 0;
@@ -388,6 +388,7 @@ main {
 }
 
 .footer {
+    background-color: var(--colorMenu);
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -395,4 +396,8 @@ main {
     text-align: center;
     justify-content: center;
     border-top: 1px solid var(--colorFontTertiary);
+}
+
+.hidden {
+    display: none !important;
 }
