@@ -286,6 +286,39 @@ main {
     border-width: 2px;
 }
 
+.listTasks .pagination {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: .25rem;
+    margin: .25rem 0;
+}
+
+.listTasks .pagination .first,
+.listTasks .pagination .prev,
+.listTasks .pagination .numbers,
+.listTasks .pagination .next,
+.listTasks .pagination .last {
+    height: 2.5rem;
+    width: 2.5rem;
+    padding: .5rem 1rem;
+    margin: 1rem 0 0 0;
+    background-color: var(--colorMenu);
+    cursor: pointer;
+    border: 1px solid var(--colorFontTertiary);
+    align-items: center;
+    justify-content: center;
+}
+
+.listTasks .pagination .first:hover,
+.listTasks .pagination .prev:hover,
+.listTasks .pagination .numbers:hover,
+.listTasks .pagination .next:hover,
+.listTasks .pagination .last:hover {
+    background-color: var(--colorOkShadow);
+}
+
 .modal {
     position: fixed;
     top: 0;
