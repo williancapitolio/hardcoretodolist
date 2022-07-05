@@ -10,10 +10,10 @@
 
     --colorGrey: #5A5A5A;
 
-    --colorMenu: #345EA8;
+    --colorMenu: #3f75d3;
 
     --colorOk: #0000EE;
-    --colorOkShadow: #0000FC;
+    --colorOkShadow: #345EA8;
 
     --colorAdd: #004E14;
     --colorAddShadow: #00D636;
@@ -52,7 +52,7 @@ main {
 }
 
 .header {
-    background-color: var(--colorMenu);
+    background-color: var(--colorOkShadow);
     position: fixed;
     top: 0;
     left: 0;
@@ -288,6 +288,34 @@ main {
 
 .listTasks .pagination {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.listTasks .pagination div {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.listTasks .pagination div:not(.numbers),
+.listTasks .pagination div.numbers div {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: var(--colorMenu);
+    border: 1px solid var(--colorFontTertiary);
+}
+
+.listTasks .pagination div.numbers div:hover,
+.listTasks .pagination div.numbers div.active {
+    background-color: var(--colorOkShadow);
+}
+
+/*
+.listTasks .pagination {
+    display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
@@ -318,6 +346,7 @@ main {
 .listTasks .pagination .last:hover {
     background-color: var(--colorOkShadow);
 }
+*/
 
 .modal {
     position: fixed;
@@ -422,7 +451,7 @@ main {
 }
 
 .footer {
-    background-color: var(--colorMenu);
+    background-color: var(--colorOkShadow);
     position: fixed;
     bottom: 0;
     width: 100%;

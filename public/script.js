@@ -36,7 +36,8 @@ let perPage = 5;
 const state = {
     page: 1,
     perPage,
-    totalPages: Math.ceil(data.length / perPage)
+    totalPages: Math.ceil(data.length / perPage),
+    maxVisibleButtons: 5
 };
 
 const html = {
@@ -63,7 +64,7 @@ const controls = {
         if (page < 1) {
             page = 1
         }
-        state.page = page
+        state.page = +page
         if (page > state.totalPages) {
             state.page = state.totalPages
         }
@@ -90,7 +91,6 @@ const controls = {
 
 const list = {
     create(item) {
-        //console.log(item)
         html.get('.containerTasks').appendChild(item)
     },
     update() {
@@ -103,12 +103,55 @@ const list = {
     }
 };
 
+const buttons = {
+    element: html.get('.pagination .numbers'),
+    create(number) {
+        const button = document.createElement('div');
+        button.innerHTML = number;
+        if (state.page == number) {
+            button.classList.add('active');
+        }
+        button.addEventListener('click', (event) => {
+            const page = event.target.innerText
+            controls.goTo(page);
+            update();
+        })
+        buttons.element.appendChild(button);
+    },
+    update() {
+        buttons.element.innerHTML = ""
+        const { maxLeft, maxRight } = buttons.calculateMaxVisible()
+        for (let page = maxLeft; page <= maxRight; page++) {
+            buttons.create(page)
+        }
+    },
+    calculateMaxVisible() {
+        const { maxVisibleButtons } = state
+        let maxLeft = (state.page - Math.floor(maxVisibleButtons / 2))
+        let maxRight = (state.page + Math.floor(maxVisibleButtons / 2))
+        if (maxLeft < 1) {
+            maxLeft = 1
+            maxRight = maxVisibleButtons
+        }
+        if (maxRight > state.totalPages) {
+            maxLeft = state.totalPages - (maxVisibleButtons - 1)
+            maxRight = state.totalPages
+            if (maxLeft < 1) {
+                maxLeft = 1
+            }
+        }
+
+        return { maxLeft, maxRight }
+    }
+};
+
 function update() {
     list.update();
+    buttons.update();
 };
 
 function init() {
-    list.update();
+    update()
     controls.createListeners();
 };
 
