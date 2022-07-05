@@ -51,6 +51,9 @@ main {
     margin: 4.5rem 0 3.625rem 0;
 }
 
+@media (max-width: 768px) {
+}
+
 .header {
     background-color: var(--colorOkShadow);
     position: fixed;
@@ -88,6 +91,9 @@ main {
     background-color: var(--colorBg);
     color: var(--colorFont);
     margin: 0;
+}
+
+@media (max-width: 768px) {   
 }
 
 .message {
@@ -131,6 +137,9 @@ main {
 
 .message .messageClose:hover {
     color: var(--colorFontTertiary);
+}
+
+@media (max-width: 768px) {
 }
 
 .menuTasks {
@@ -179,6 +188,9 @@ main {
 .menuTasks .updateButton:hover {
     background-color: var(--colorUpdate);
     color: var(--colorFont);
+}
+
+@media (max-width: 768px) {
 }
 
 .listTasks {
@@ -313,40 +325,12 @@ main {
     background-color: var(--colorOkShadow);
 }
 
-/*
-.listTasks .pagination {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: .25rem;
-    margin: .25rem 0;
+.hidden {
+    display: none !important;
 }
 
-.listTasks .pagination .first,
-.listTasks .pagination .prev,
-.listTasks .pagination .numbers,
-.listTasks .pagination .next,
-.listTasks .pagination .last {
-    height: 2.5rem;
-    width: 2.5rem;
-    padding: .5rem 1rem;
-    margin: 1rem 0 0 0;
-    background-color: var(--colorMenu);
-    cursor: pointer;
-    border: 1px solid var(--colorFontTertiary);
-    align-items: center;
-    justify-content: center;
+@media (max-width: 768px) {
 }
-
-.listTasks .pagination .first:hover,
-.listTasks .pagination .prev:hover,
-.listTasks .pagination .numbers:hover,
-.listTasks .pagination .next:hover,
-.listTasks .pagination .last:hover {
-    background-color: var(--colorOkShadow);
-}
-*/
 
 .modal {
     position: fixed;
@@ -450,6 +434,9 @@ main {
     background-color: var(--colorDel);
 }
 
+@media (max-width: 768px) {
+}
+
 .footer {
     background-color: var(--colorOkShadow);
     position: fixed;
@@ -471,7 +458,5 @@ main {
     color: var(--colorFontTertiary);
 }
 
-
-.hidden {
-    display: none !important;
+@media (max-width: 768px) {
 }
