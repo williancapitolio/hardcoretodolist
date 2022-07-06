@@ -52,6 +52,9 @@ main {
 }
 
 @media (max-width: 768px) {
+    main {
+        margin: 6rem 0 3.625rem 0;
+    }
 }
 
 .header {
@@ -93,7 +96,32 @@ main {
     margin: 0;
 }
 
-@media (max-width: 768px) {   
+@media (max-width: 768px) {
+    .header {
+        height: 6rem;
+    }
+
+    .header .navbar {
+        padding: .5rem;
+    }
+
+    .header .navbar .navbarContent {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .header .navbar .navbarContent .navbarContentBrand {
+        text-align: center;
+    }
+
+    .header .navbar .navbarContent .formSearchTodo {
+        text-align: center;
+        margin: .5rem 0 0 0;
+    }
+
+    .header .navbar .navbarContent .navbarContentSearch {
+        width: 75%;
+    }
 }
 
 .message {
@@ -137,9 +165,6 @@ main {
 
 .message .messageClose:hover {
     color: var(--colorFontTertiary);
-}
-
-@media (max-width: 768px) {
 }
 
 .menuTasks {
@@ -191,6 +216,35 @@ main {
 }
 
 @media (max-width: 768px) {
+    .menuTasks {
+        padding: .25rem;
+        font-size: .75rem;
+        border-bottom: 1px solid var(--colorFontTertiary);
+    }
+
+    .menuTasks h2 {
+        padding: 0 0 .125rem 0;
+    }
+
+    .menuTasks form {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .menuTasks input {
+        width: 75%;
+        padding: .3rem .6rem;
+        margin: 0 0 .25rem 0;
+    }
+
+    .menuTasks .addButton,
+    .menuTasks .updateButton {
+        width: 25%;
+        padding: .3rem .6rem;
+        margin: 0 0 .25rem 0;
+        background-color: var(--colorAdd);
+        color: var(--colorFont);
+    }
 }
 
 .listTasks {
@@ -330,6 +384,62 @@ main {
 }
 
 @media (max-width: 768px) {
+    .listTasks {
+        padding: 0;
+    }
+
+    /*
+    .listTasks ul li {
+        height: 2rem;
+    }
+    */
+
+    .listTasks ul li a {
+        font-size: .75rem;
+    }
+
+    .listTasks ul li span {
+        font-size: .5rem;
+        padding-top: .15rem;
+    }
+
+    .listTasks ul li div .updateIcon {
+        font-size: 1rem;
+        padding-left: 0;
+        padding-right: 0;
+        margin-right: .5rem;
+    }
+
+    .listTasks ul li div .deleteIcon {
+        font-size: 1rem;
+    }
+
+    .listTasks ul li a.check-true::before {
+        top: 16px;
+        left: 19px;
+        height: 15px;
+        width: 7px;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+    }
+
+    .listTasks ul li a.check-false::before {
+        top: 16px;
+        left: 16px;
+        height: 13px;
+        width: 13px;
+        border-width: 2px;
+    }
+
+    .listTasks .pagination div:not(.numbers),
+    .listTasks .pagination div.numbers div {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .listTasks .pagination .numbers {
+        
+    }
 }
 
 .modal {
@@ -435,6 +545,13 @@ main {
 }
 
 @media (max-width: 768px) {
+    .modal .modalCard {
+        width: 90%;
+    }
+
+    .modal .modalCard .modalCardContent p {
+        padding: 1rem 2rem;
+    }
 }
 
 .footer {
@@ -458,5 +575,4 @@ main {
     color: var(--colorFontTertiary);
 }
 
-@media (max-width: 768px) {
-}
+@media (max-width: 768px) {}
