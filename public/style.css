@@ -54,7 +54,9 @@ main {
 @media (max-width: 768px) {
     main {
         margin: 6rem 0 3.625rem 0;
+        overflow: hidden;
     }
+    
 }
 
 .header {
@@ -356,7 +358,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 1rem 0;
+    margin: 1rem 0 0 0;
 }
 
 .listTasks .pagination div {
@@ -387,12 +389,6 @@ main {
     .listTasks {
         padding: 0;
     }
-
-    /*
-    .listTasks ul li {
-        height: 2rem;
-    }
-    */
 
     .listTasks ul li a {
         font-size: .75rem;
@@ -435,10 +431,6 @@ main {
     .listTasks .pagination div.numbers div {
         width: 2rem;
         height: 2rem;
-    }
-
-    .listTasks .pagination .numbers {
-        
     }
 }
 
